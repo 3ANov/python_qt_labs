@@ -28,13 +28,8 @@ class SumCalculator(QWidget):
         try:
             # Установим x = 1
             x = 1
-
-            # Инициализация суммы
-            s = math.exp(x)
-
-            # Вычисление суммы по формуле для i от 2 до 10
-            for i in range(2, 11):
-                s += 1 / math.factorial(i)
+            n = 10
+            s = sum((math.exp(x) + i) / math.factorial(i + 1) for i in range(2, n + 1))
 
             # Выводим результат
             self.result_label.setText(f"Сумма: {s:.6f}")
